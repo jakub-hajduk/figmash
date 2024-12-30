@@ -1,0 +1,28 @@
+{
+	"compilerOptions": {
+		"outDir": "dist",
+
+		"target": "esnext",
+		"lib": ["ESNext", "DOM"],
+		"module": "ESNext",
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+
+		"allowJs": true,
+		"moduleResolution": "bundler",
+		"allowSyntheticDefaultImports": true,
+		"allowImportingTsExtensions": false,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"sourceMap": true,
+
+		"strict": true,
+		"noImplicitAny": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"verbatimModuleSyntax": true
+	},
+	"include": ["src/**/*.ts"],
+	"exclude": []
+}

@@ -1,0 +1,476 @@
+{
+	"name": "figmash",
+	"version": "0.0.0",
+	"description": "Figma parsing library",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"scripts": {
+		"build": "pkgroll",
+		"test": "tsx ./scripts/test-runner.ts",
+		"check": "biome check",
+		"fix": "biome check --write",
+		"update-exports": "tsx ./scripts/update-exports.ts"
+	},
+	"keywords": [],
+	"type": "module",
+	"author": "",
+	"license": "ISC",
+	"peerDependencies": {
+		"@figma/rest-api-spec": "^0.22.0"
+	},
+	"dependencies": {
+		"@types/picomatch": "^3.0.1",
+		"figma-api": "2.0.1-beta",
+		"picomatch": "^4.0.2"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/node": "^22.10.2",
+		"glob": "^11.0.0",
+		"pkgroll": "^2.5.1",
+		"tsx": "^4.19.2",
+		"typescript": "^5.7.2"
+	},
+	"exports": {
+		".": {
+			"import": {
+				"default": "./dist/index.js",
+				"types": "./dist/index.d.ts"
+			},
+			"require": {
+				"default": "./dist/index.cjs",
+				"types": "./dist/index.d.cts"
+			}
+		},
+		"./variables-store": {
+			"import": {
+				"default": "./dist/variables/variables-store.js",
+				"types": "./dist/variables/variables-store.d.ts"
+			},
+			"require": {
+				"default": "./dist/variables/variables-store.cjs",
+				"types": "./dist/variables/variables-store.d.cts"
+			}
+		},
+		"./variable": {
+			"import": {
+				"default": "./dist/variables/variable.js",
+				"types": "./dist/variables/variable.d.ts"
+			},
+			"require": {
+				"default": "./dist/variables/variable.cjs",
+				"types": "./dist/variables/variable.d.cts"
+			}
+		},
+		"./variable-collection": {
+			"import": {
+				"default": "./dist/variables/variable-collection.js",
+				"types": "./dist/variables/variable-collection.d.ts"
+			},
+			"require": {
+				"default": "./dist/variables/variable-collection.cjs",
+				"types": "./dist/variables/variable-collection.d.cts"
+			}
+		},
+		"./dtcg-types": {
+			"import": {
+				"default": "./dist/variables/dtcg-types.js",
+				"types": "./dist/variables/dtcg-types.d.ts"
+			},
+			"require": {
+				"default": "./dist/variables/dtcg-types.cjs",
+				"types": "./dist/variables/dtcg-types.d.cts"
+			}
+		},
+		"./dtcg-type-guards": {
+			"import": {
+				"default": "./dist/variables/dtcg-type-guards.js",
+				"types": "./dist/variables/dtcg-type-guards.d.ts"
+			},
+			"require": {
+				"default": "./dist/variables/dtcg-type-guards.cjs",
+				"types": "./dist/variables/dtcg-type-guards.d.cts"
+			}
+		},
+		"./walk": {
+			"import": {
+				"default": "./dist/nodes/walk.js",
+				"types": "./dist/nodes/walk.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/walk.cjs",
+				"types": "./dist/nodes/walk.d.cts"
+			}
+		},
+		"./glob": {
+			"import": {
+				"default": "./dist/nodes/glob.js",
+				"types": "./dist/nodes/glob.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/glob.cjs",
+				"types": "./dist/nodes/glob.d.cts"
+			}
+		},
+		"./get-structured-text": {
+			"import": {
+				"default": "./dist/nodes/get-structured-text.js",
+				"types": "./dist/nodes/get-structured-text.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/get-structured-text.cjs",
+				"types": "./dist/nodes/get-structured-text.d.cts"
+			}
+		},
+		"./flatten": {
+			"import": {
+				"default": "./dist/nodes/flatten.js",
+				"types": "./dist/nodes/flatten.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/flatten.cjs",
+				"types": "./dist/nodes/flatten.d.cts"
+			}
+		},
+		"./find-deep": {
+			"import": {
+				"default": "./dist/nodes/find-deep.js",
+				"types": "./dist/nodes/find-deep.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/find-deep.cjs",
+				"types": "./dist/nodes/find-deep.d.cts"
+			}
+		},
+		"./deep-child": {
+			"import": {
+				"default": "./dist/nodes/deep-child.js",
+				"types": "./dist/nodes/deep-child.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/deep-child.cjs",
+				"types": "./dist/nodes/deep-child.d.cts"
+			}
+		},
+		"./mimic-type": {
+			"import": {
+				"default": "./dist/nodes/type-guards/mimic-type.js",
+				"types": "./dist/nodes/type-guards/mimic-type.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/mimic-type.cjs",
+				"types": "./dist/nodes/type-guards/mimic-type.d.cts"
+			}
+		},
+		"./is-widget-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-widget-node.js",
+				"types": "./dist/nodes/type-guards/is-widget-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-widget-node.cjs",
+				"types": "./dist/nodes/type-guards/is-widget-node.d.cts"
+			}
+		},
+		"./is-washi-tape-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-washi-tape-node.js",
+				"types": "./dist/nodes/type-guards/is-washi-tape-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-washi-tape-node.cjs",
+				"types": "./dist/nodes/type-guards/is-washi-tape-node.d.cts"
+			}
+		},
+		"./is-vector-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-vector-node.js",
+				"types": "./dist/nodes/type-guards/is-vector-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-vector-node.cjs",
+				"types": "./dist/nodes/type-guards/is-vector-node.d.cts"
+			}
+		},
+		"./is-text-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-text-node.js",
+				"types": "./dist/nodes/type-guards/is-text-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-text-node.cjs",
+				"types": "./dist/nodes/type-guards/is-text-node.d.cts"
+			}
+		},
+		"./is-table-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-table-node.js",
+				"types": "./dist/nodes/type-guards/is-table-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-table-node.cjs",
+				"types": "./dist/nodes/type-guards/is-table-node.d.cts"
+			}
+		},
+		"./is-table-cell-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-table-cell-node.js",
+				"types": "./dist/nodes/type-guards/is-table-cell-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-table-cell-node.cjs",
+				"types": "./dist/nodes/type-guards/is-table-cell-node.d.cts"
+			}
+		},
+		"./is-subcanvas-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-subcanvas-node.js",
+				"types": "./dist/nodes/type-guards/is-subcanvas-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-subcanvas-node.cjs",
+				"types": "./dist/nodes/type-guards/is-subcanvas-node.d.cts"
+			}
+		},
+		"./is-sticky-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-sticky-node.js",
+				"types": "./dist/nodes/type-guards/is-sticky-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-sticky-node.cjs",
+				"types": "./dist/nodes/type-guards/is-sticky-node.d.cts"
+			}
+		},
+		"./is-star-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-star-node.js",
+				"types": "./dist/nodes/type-guards/is-star-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-star-node.cjs",
+				"types": "./dist/nodes/type-guards/is-star-node.d.cts"
+			}
+		},
+		"./is-slice-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-slice-node.js",
+				"types": "./dist/nodes/type-guards/is-slice-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-slice-node.cjs",
+				"types": "./dist/nodes/type-guards/is-slice-node.d.cts"
+			}
+		},
+		"./is-shape-with-text-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-shape-with-text-node.js",
+				"types": "./dist/nodes/type-guards/is-shape-with-text-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-shape-with-text-node.cjs",
+				"types": "./dist/nodes/type-guards/is-shape-with-text-node.d.cts"
+			}
+		},
+		"./is-section-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-section-node.js",
+				"types": "./dist/nodes/type-guards/is-section-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-section-node.cjs",
+				"types": "./dist/nodes/type-guards/is-section-node.d.cts"
+			}
+		},
+		"./is-regular-polygon-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-regular-polygon-node.js",
+				"types": "./dist/nodes/type-guards/is-regular-polygon-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-regular-polygon-node.cjs",
+				"types": "./dist/nodes/type-guards/is-regular-polygon-node.d.cts"
+			}
+		},
+		"./is-rectangle-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-rectangle-node.js",
+				"types": "./dist/nodes/type-guards/is-rectangle-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-rectangle-node.cjs",
+				"types": "./dist/nodes/type-guards/is-rectangle-node.d.cts"
+			}
+		},
+		"./is-link-unfurl-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-link-unfurl-node.js",
+				"types": "./dist/nodes/type-guards/is-link-unfurl-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-link-unfurl-node.cjs",
+				"types": "./dist/nodes/type-guards/is-link-unfurl-node.d.cts"
+			}
+		},
+		"./is-line-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-line-node.js",
+				"types": "./dist/nodes/type-guards/is-line-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-line-node.cjs",
+				"types": "./dist/nodes/type-guards/is-line-node.d.cts"
+			}
+		},
+		"./is-instance-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-instance-node.js",
+				"types": "./dist/nodes/type-guards/is-instance-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-instance-node.cjs",
+				"types": "./dist/nodes/type-guards/is-instance-node.d.cts"
+			}
+		},
+		"./is-group-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-group-node.js",
+				"types": "./dist/nodes/type-guards/is-group-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-group-node.cjs",
+				"types": "./dist/nodes/type-guards/is-group-node.d.cts"
+			}
+		},
+		"./is-frame-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-frame-node.js",
+				"types": "./dist/nodes/type-guards/is-frame-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-frame-node.cjs",
+				"types": "./dist/nodes/type-guards/is-frame-node.d.cts"
+			}
+		},
+		"./is-embed-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-embed-node.js",
+				"types": "./dist/nodes/type-guards/is-embed-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-embed-node.cjs",
+				"types": "./dist/nodes/type-guards/is-embed-node.d.cts"
+			}
+		},
+		"./is-ellipse-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-ellipse-node.js",
+				"types": "./dist/nodes/type-guards/is-ellipse-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-ellipse-node.cjs",
+				"types": "./dist/nodes/type-guards/is-ellipse-node.d.cts"
+			}
+		},
+		"./is-document-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-document-node.js",
+				"types": "./dist/nodes/type-guards/is-document-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-document-node.cjs",
+				"types": "./dist/nodes/type-guards/is-document-node.d.cts"
+			}
+		},
+		"./is-connector-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-connector-node.js",
+				"types": "./dist/nodes/type-guards/is-connector-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-connector-node.cjs",
+				"types": "./dist/nodes/type-guards/is-connector-node.d.cts"
+			}
+		},
+		"./is-component-set-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-component-set-node.js",
+				"types": "./dist/nodes/type-guards/is-component-set-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-component-set-node.cjs",
+				"types": "./dist/nodes/type-guards/is-component-set-node.d.cts"
+			}
+		},
+		"./is-component-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-component-node.js",
+				"types": "./dist/nodes/type-guards/is-component-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-component-node.cjs",
+				"types": "./dist/nodes/type-guards/is-component-node.d.cts"
+			}
+		},
+		"./is-canvas-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-canvas-node.js",
+				"types": "./dist/nodes/type-guards/is-canvas-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-canvas-node.cjs",
+				"types": "./dist/nodes/type-guards/is-canvas-node.d.cts"
+			}
+		},
+		"./is-boolean-operation-node": {
+			"import": {
+				"default": "./dist/nodes/type-guards/is-boolean-operation-node.js",
+				"types": "./dist/nodes/type-guards/is-boolean-operation-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/is-boolean-operation-node.cjs",
+				"types": "./dist/nodes/type-guards/is-boolean-operation-node.d.cts"
+			}
+		},
+		"./has-children": {
+			"import": {
+				"default": "./dist/nodes/type-guards/has-children.js",
+				"types": "./dist/nodes/type-guards/has-children.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/type-guards/has-children.cjs",
+				"types": "./dist/nodes/type-guards/has-children.d.cts"
+			}
+		},
+		"./types": {
+			"import": {
+				"default": "./dist/nodes/transform/types.js",
+				"types": "./dist/nodes/transform/types.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/transform/types.cjs",
+				"types": "./dist/nodes/transform/types.d.cts"
+			}
+		},
+		"./transform": {
+			"import": {
+				"default": "./dist/nodes/transform/transform.js",
+				"types": "./dist/nodes/transform/transform.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/transform/transform.cjs",
+				"types": "./dist/nodes/transform/transform.d.cts"
+			}
+		},
+		"./is-faux-node": {
+			"import": {
+				"default": "./dist/nodes/transform/is-faux-node.js",
+				"types": "./dist/nodes/transform/is-faux-node.d.ts"
+			},
+			"require": {
+				"default": "./dist/nodes/transform/is-faux-node.cjs",
+				"types": "./dist/nodes/transform/is-faux-node.d.cts"
+			}
+		}
+	}
+}
