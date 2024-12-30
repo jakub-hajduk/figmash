@@ -1,6 +1,15 @@
 import type { Node } from '@figma/rest-api-spec';
 import { hasChildren } from './type-guards/has-children';
 
+/**
+ * Walks recursively through the figma file nodes.
+ *
+ * ```typescript
+ * walk(document, (node) => {
+ *   if (node.name === 'Documentation') console.log(frame)
+ * })
+ * ```
+ */
 export function walk(
 	root: Node,
 	callback: (node: Node, path: Node[], index: number) => void,
