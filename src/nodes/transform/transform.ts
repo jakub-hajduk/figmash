@@ -55,10 +55,10 @@ export async function transform(
 
 	const getter = getters.find((getter) => getter.test(node));
 
-	const out = (await Promise.resolve(getter?.get(node))) || {};
+	let out = (await Promise.resolve(getter?.get(node))) || {};
 
 	if (out && out.children === false) {
-		out.children = undefined;
+		delete out.children;
 		return out;
 	}
 
@@ -79,7 +79,9 @@ export async function transform(
 	}
 
 	if (parseOptions.omitEmpty && out.children && out.children.length === 0) {
-		out.children = undefined;
+		delete out.children;
+		const { children, ...rest } = out
+		out = rest
 	}
 
 	if (isFauxNode(out)) {

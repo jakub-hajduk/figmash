@@ -49,7 +49,6 @@ describe('parseTree()', () => {
 				{
 					type: 'GROUP',
 					name: 'Group 1',
-					children: [],
 				},
 				{
 					type: 'RECTANGLE',
