@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.2
+
+[compare changes](https://github.com/jakub-hajduk/figmash/compare/v0.0.1...v0.0.2)
+
+### 🏡 Chore
+
+- Remove redundant dependencies ([8452212](https://github.com/jakub-hajduk/figmash/commit/8452212))
+
+### ❤️ Contributors
+
+- Jakub Hajduk <devhajduk@gmail.com>
+
 ## v0.0.1
 
 
