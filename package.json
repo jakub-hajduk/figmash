@@ -2,8 +2,6 @@
 	"name": "figmash",
 	"version": "0.0.2",
 	"description": "Parse Figma files and extract data you need the easy way.",
-	"main": "./dist/index.cjs",
-	"module": "./dist/index.js",
 	"scripts": {
 		"build": "pkgroll",
 		"test": "tsx ./scripts/test-runner.ts",
@@ -39,6 +37,9 @@
 		"tsx": "^4.19.2",
 		"typescript": "^5.7.2"
 	},
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"files": ["./dist"],
 	"exports": {
 		".": {
 			"import": {
