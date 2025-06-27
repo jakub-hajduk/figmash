@@ -1,7 +1,7 @@
 {
 	"name": "figmash",
 	"version": "0.0.0",
-	"description": "Figma parsing library",
+	"description": "Parse Figma files and extract data you need the easy way.",
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
 	"scripts": {
@@ -14,7 +14,14 @@
 	},
 	"keywords": [],
 	"type": "module",
-	"author": "",
+	"author": {
+		"name": "Jakub Hajduk",
+		"email": "devhajduk@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jakub-hajduk/figmash"
+	},
 	"license": "ISC",
 	"peerDependencies": {
 		"@figma/rest-api-spec": "^0.22.0"
