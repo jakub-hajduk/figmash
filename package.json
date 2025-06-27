@@ -1,6 +1,6 @@
 {
 	"name": "figmash",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"description": "Parse Figma files and extract data you need the easy way.",
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
