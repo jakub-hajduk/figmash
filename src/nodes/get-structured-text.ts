@@ -105,6 +105,11 @@ function buildNestedObject(
 	return hierarchy;
 }
 
+// TODO: Add documentation.
+/**
+ * Gets structured text
+ * @experimental
+ */
 export function getStructuredText(node: TextNode): StructuredTextTreeNode[] {
 	const structureEntries = buildStructureEntries(
 		node.characters,
