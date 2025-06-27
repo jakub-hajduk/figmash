@@ -36,6 +36,7 @@ build-storybook.log
 **/*.local
 lerna-debug.log
 .local/
+.npmrc
 
 
 # environment variables
@@ -43,3 +44,4 @@ lerna-debug.log
 .env.*
 **/.env
 **/.env.*
+
