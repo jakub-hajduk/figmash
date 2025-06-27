@@ -49,7 +49,7 @@ export type Getter = {
 	 * const getter: Getter = {
 	 *   [...]
 	 *   get: (node) => {
-	 *     const listItems: TreeNode[] = getListItems(node)
+	 *     const listItems: GetterNode[] = getListItems(node)
 	 *
 	 *     return {
 	 *       type: 'unordered-list',
@@ -59,14 +59,14 @@ export type Getter = {
 	 * }
 	 * ```
 	 *
-	 * If you don't want to provide any children for the TreeNode, return `children: false`. This property will be removed from final tree.
+	 * If you don't want to provide any children for the GetterNode, return `children: false`. This property will be removed from final tree.
 	 *
 	 * @example
 	 * ```typescript
 	 * const getter: Getter = {
 	 *   [...]
 	 *   get: (node) => {
-	 *     const listItems: TreeNode[] = getListItems(node)
+	 *     const listItems: GetterNode[] = getListItems(node)
 	 *
 	 *     return {
 	 *       type: 'paragraph',
