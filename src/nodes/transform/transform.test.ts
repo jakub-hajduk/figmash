@@ -4,7 +4,7 @@ import { n } from '../type-guards/mimic-type';
 import { transform } from './transform';
 import type { Getter } from './types';
 
-describe('parseTree()', () => {
+describe('transform()', () => {
 	it('should use default Getter if no getters provided', async () => {
 		const output = await transform(
 			n({

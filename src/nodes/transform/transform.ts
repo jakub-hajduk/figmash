@@ -58,6 +58,7 @@ export async function transform(
 	let out = (await Promise.resolve(getter?.get(node))) || {};
 
 	if (out && out.children === false) {
+		// biome-ignore lint/performance/noDelete: property needs to be removed entirely, not set to undefined.
 		delete out.children;
 		return out;
 	}
@@ -79,6 +80,7 @@ export async function transform(
 	}
 
 	if (parseOptions.omitEmpty && out.children && out.children.length === 0) {
+		// biome-ignore lint/performance/noDelete: property needs to be removed entirely, not set to undefined.
 		delete out.children;
 		const { children, ...rest } = out
 		out = rest

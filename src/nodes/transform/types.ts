@@ -20,9 +20,6 @@ export type Getter = {
 	 * Test function that determines if get method should be executed on current node.
 	 * You can use it to perform the getter only on nodes that match certain rules.
 	 *
-	 *
-	 * @example
-	 *
 	 * @example
 	 * ```typescript
 	 * const getter: Getter = {
@@ -35,9 +32,6 @@ export type Getter = {
 	/**
 	 * Getter function specifies what kind of data needs to be fetched from node and how to get it. It is executed only if node passed getter's `test` predicate.
 	 *
-	 *
-	 * @example
-	 *
 	 * @example
 	 * ```typescript
 	 * const getter: Getter = {
@@ -46,14 +40,9 @@ export type Getter = {
 	 *     type: 'table-row'
 	 *   })
 	 * }
-	 *
-	 * @example
-	 * ```typescript
+	 * ```
 	 *
 	 * If you wish to parse the children on your own, you can return your own `children`, and parser will not overwrite it.
-	 *
-	 *
-	 * @example
 	 *
 	 * @example
 	 * ```typescript
@@ -68,13 +57,9 @@ export type Getter = {
 	 *     }
 	 *   }
 	 * }
-	 *
-	 * @example
-	 * ```typescript
+	 * ```
 	 *
 	 * If you don't want to provide any children for the TreeNode, return `children: false`. This property will be removed from final tree.
-	 *
-	 * @example
 	 *
 	 * @example
 	 * ```typescript
@@ -108,6 +93,8 @@ export interface ParseTreeOptions {
 	omitEmpty: boolean;
 	/**
 	 * Whether nodes that's only property is `children` should be skipped, or not.
+	 *
+	 * @default true
 	 */
 	omitFauxNodes: boolean;
 }
