@@ -27,14 +27,13 @@
 		"@figma/rest-api-spec": "^0.22.0"
 	},
 	"dependencies": {
-		"@types/picomatch": "^3.0.1",
-		"changelogen": "^0.6.1",
-		"figma-api": "2.0.1-beta",
 		"picomatch": "^4.0.2"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@types/node": "^22.10.2",
+		"@types/picomatch": "^3.0.1",
+		"changelogen": "^0.6.1",
 		"glob": "^11.0.0",
 		"pkgroll": "^2.5.1",
 		"tsx": "^4.19.2",
