@@ -9,7 +9,8 @@
 		"test": "tsx ./scripts/test-runner.ts",
 		"check": "biome check",
 		"fix": "biome check --write",
-		"update-exports": "tsx ./scripts/update-exports.ts"
+		"update-exports": "tsx ./scripts/update-exports.ts",
+		"release": "pnpm run fix && pnpm run build && changelogen --release --push --publish"
 	},
 	"keywords": [],
 	"type": "module",
@@ -20,6 +21,7 @@
 	},
 	"dependencies": {
 		"@types/picomatch": "^3.0.1",
+		"changelogen": "^0.6.1",
 		"figma-api": "2.0.1-beta",
 		"picomatch": "^4.0.2"
 	},
