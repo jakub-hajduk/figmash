@@ -82,8 +82,8 @@ export async function transform(
 	if (parseOptions.omitEmpty && out.children && out.children.length === 0) {
 		// biome-ignore lint/performance/noDelete: property needs to be removed entirely, not set to undefined.
 		delete out.children;
-		const { children, ...rest } = out
-		out = rest
+		const { children, ...rest } = out;
+		out = rest;
 	}
 
 	if (isFauxNode(out)) {
